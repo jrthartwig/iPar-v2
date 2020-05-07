@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, TextInput, StyleSheet } from 'react-native'; 
+import { View, Text, StyleSheet } from 'react-native'; 
 
 const Header = props => {
     return (
@@ -21,8 +21,9 @@ const styles = StyleSheet.create({
     },
     headerTitle: {
         color: 'white',
-        fontSize: 25,
-        fontFamily: 'Marker Felt'
+        fontSize: 32,
+        fontFamily: 'Verdana',
+        fontWeight: 'bold'
     }
 
 

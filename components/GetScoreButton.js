@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     button: {
         backgroundColor: '#014421',
         width: 140,
-        fontFamily: 'Marker Felt',
+        fontFamily: 'Calibri',
         justifyContent: 'center',
         alignItems: 'center',
         textAlignVertical: 'center',

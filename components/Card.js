@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
         elevation: 10,
         padding: 20,
         borderRadius: 10,
-        width: 180, 
+        width: 160, 
         margin: 10
     }
 

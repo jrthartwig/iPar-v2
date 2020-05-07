@@ -1,17 +1,16 @@
 import React from 'react';
 import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import Header from './components/Header';
-import Hole from './components/Hole';
-import GetScoreButton from './components/GetScoreButton'
+import { NavigationContainer } from '@react-navigation/native';
+import Tabs from './components/Tabs';
 
 export default function App() {
   return (
     <View style={styles.screen}>
       <Header title="Noble Hawk" />
-      <ScrollView>
-      <Hole />
-      <GetScoreButton style={styles.button} />
-      </ScrollView>
+      <NavigationContainer>
+        <Tabs />
+      </NavigationContainer>
     </View>
   );
 }

@@ -1,7 +1,4 @@
-const holeJson = {
-
-"holes" : 
-
+const holeJson = 
 [
     {
         "number": 1,
@@ -204,5 +201,4 @@ const holeJson = {
         "imageName": "hole_eighteen"
     }
 ]
-}
 export default holeJson
