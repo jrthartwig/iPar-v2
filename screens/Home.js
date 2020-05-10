@@ -45,13 +45,15 @@ const styles = StyleSheet.create({
         fontSize: 18,
         textAlign: 'left',
         marginLeft: 10,
+        color: '#282828'
     },
     eventsTitle: {
         fontFamily: 'Verdana', 
         paddingTop: 15, 
         fontSize: 20,
         textAlign: 'center',
-        textDecorationLine: 'underline'
+        textDecorationLine: 'underline',
+        color: '#282828'
     },
     perfect: {
         color: 'white', 

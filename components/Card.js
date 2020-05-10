@@ -11,16 +11,14 @@ const styles = StyleSheet.create({
     card: {
         shadowColor: 'black',
         flexDirection: 'row',
-        flexWrap: 'wrap',
-        shadowOffset: {width: 0, height: 2},
-        shadowRadius: 6,
-        shadowOpacity: 0.26,
         backgroundColor: 'white', 
-        elevation: 10,
-        padding: 20,
+        padding: 12,
         borderRadius: 10,
-        width: 160, 
-        margin: 10
+        alignSelf: 'stretch',
+        width: 450,
+        justifyContent: 'center',
+        borderBottomWidth: .5,
+        borderBottomColor: "#A9A9A9"
     }
 
 })
