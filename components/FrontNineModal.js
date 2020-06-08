@@ -30,13 +30,17 @@ const FrontNineModal = (props) => {
         ))}
       </View>
       <View style={styles.button}>
-        <Button title="Close" onPress={props.onExit} />
+        <Button title="Close" onPress={props.onExit} color="#51130d" />
       </View>
     </Modal>
   );
 };
 
 const styles = StyleSheet.create({
+  container: {
+    borderTopColor: 'black', 
+    borderTopWidth: 1
+  },
   modal: {
     justifyContent: "center",
     alignItems: "center",
@@ -59,7 +63,7 @@ const styles = StyleSheet.create({
     padding: 6.5,
     fontSize: 14,
     fontWeight: "bold",
-    backgroundColor: "#ddd",
+    backgroundColor: "#ddd"
   },
   talonTitleText: {
     padding: 6.5,
@@ -105,7 +109,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     padding: 6.5,
     fontSize: 14,
-    backgroundColor: "#ddd",
+    backgroundColor: "#ddd"
   },
   talonYardage: {
     justifyContent: "space-between",

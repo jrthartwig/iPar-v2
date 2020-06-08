@@ -9,7 +9,6 @@ const Card = props => {
 
 const styles = StyleSheet.create({
     card: {
-        shadowColor: 'black',
         flexDirection: 'row',
         backgroundColor: 'white', 
         padding: 12,

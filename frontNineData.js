@@ -10,7 +10,7 @@ const frontNineData =
         "senior": 320,
         "par": 4,
         "imageName": "hole_one",
-        "score": 0
+        "score": 3
         
     },
     {

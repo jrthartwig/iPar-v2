@@ -4,7 +4,7 @@ import backNineData from "../backNineData";
 
 const BackNineModal = (props) => {
   return (
-    <Modal visible={props.visible}>
+    <Modal visible={props.visible} animationType="fade">
       <View style={styles.modal}>
         <View style={styles.title}>
           <Text style={styles.holeTitleText}>Hole</Text>
@@ -30,7 +30,7 @@ const BackNineModal = (props) => {
         ))}
       </View>
       <View style={styles.button}>
-        <Button title="Close" onPress={props.onExit} />
+        <Button title="Close" onPress={props.onExit} color="#51130d" />
       </View>
     </Modal>
   );
@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
     flexDirection: "column"
   },
   titleText: {
-    padding: 5.75,
+    padding: 6.5,
     fontSize: 14,
     fontWeight: "bold",
   },

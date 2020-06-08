@@ -9,7 +9,8 @@ const backNineData =
         "redtail": 262,
         "senior": 320,
         "par": 4,
-        "imageName": "hole_ten"
+        "imageName": "hole_ten",
+        "score": 0
     },
     {
         "number": 11,
@@ -20,7 +21,8 @@ const backNineData =
         "redtail": 110,
         "senior": 110,
         "par": 3,
-        "imageName": "hole_eleven"
+        "imageName": "hole_eleven",
+        "score": 0
     },
     {
         "number": 12,
@@ -31,7 +33,8 @@ const backNineData =
         "redtail": 287,
         "senior": 290,
         "par": 4,
-        "imageName": "hole_twelve"
+        "imageName": "hole_twelve",
+        "score": 0
     },
     {
         "number": 13,
@@ -42,7 +45,8 @@ const backNineData =
         "redtail": 491,
         "senior": 480,
         "par": 5,
-        "imageName": "hole_thirteen"
+        "imageName": "hole_thirteen",
+        "score": 0
     },
     {
         "number": 14,
@@ -53,7 +57,8 @@ const backNineData =
         "redtail": 256,
         "senior": 295,
         "par": 4,
-        "imageName": "hole_fourteen"
+        "imageName": "hole_fourteen",
+        "score": 0
     },
     {
         "number": 15,
@@ -64,7 +69,8 @@ const backNineData =
         "redtail": 157,
         "senior": 115,
         "par": 3,
-        "imageName": "hole_fifteen"
+        "imageName": "hole_fifteen",
+        "score": 0
     },
     {
         "number": 16,
@@ -75,7 +81,8 @@ const backNineData =
         "redtail": 453,
         "senior": 460,
         "par": 5,
-        "imageName": "hole_sixteen"
+        "imageName": "hole_sixteen",
+        "score": 0
     },
     {
         "number": 17,
@@ -86,7 +93,8 @@ const backNineData =
         "redtail": 122,
         "senior": 130,
         "par": 3,
-        "imageName": "hole_seventeen"
+        "imageName": "hole_seventeen",
+        "score": 0
     },
     {
         "number": 18,
@@ -97,7 +105,8 @@ const backNineData =
         "redtail": 376,
         "senior": 470,
         "par": 5,
-        "imageName": "hole_eighteen"
+        "imageName": "hole_eighteen",
+        "score": 0
     }
 ]
     export default backNineData

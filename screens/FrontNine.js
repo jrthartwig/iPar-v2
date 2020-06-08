@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   View,
   Text,
@@ -9,10 +9,14 @@ import {
 import frontNineData from "../frontNineData";
 import Card from "../components/Card";
 import FrontNineModal from "../components/FrontNineModal";
+import HoleDetail from "../screens/HoleDetail"
+
 
 const FrontNine = (props) => {
-  const [scores, setScores] = useState([0]);
-  const [scorecardView, setScorecardView] = useState(false); 
+  const [scorecardView, setScorecardView] = useState(false);
+  const [holes, setHoles] = useState(frontNineData);
+  const [holeDetail, setHoleDetail] = useState(false);
+
 
   const onClickHandler = () => {
     setScorecardView(true);
@@ -22,23 +26,30 @@ const FrontNine = (props) => {
     setScorecardView(false);
   };
 
-  const onChangeInputHandler = (enteredScore) => {
-    if (enteredScore) setScores(scores.concat([parseInt(enteredScore)]));
-  };
+  const onCloseHandler = () => {
+    setHoleDetail(false);
+  }
 
   const onPressHandler = () => {
-    alert("You pressed this");
+    setHoleDetail(true);
   };
 
-  const scoreTally = (total, score) => total + score;
-  
+  const scoreTally = (t, {score}) => t + score;
+
+  const updateScore = (score, index) => {
+    let updateHoles = [...holes]
+    updateHoles[index].score = score === '' ? 0 : parseInt(score);
+    setHoles(updateHoles)
+  }
 
   return (
     <View style={styles.screen}>
       <View style={styles.scrollWrapper}>
-        {frontNineData.map((hole, index) => (
-          <TouchableOpacity onPress={onPressHandler}>
-            <Card key={index} styles={styles.holeWrapper}>
+      <View style={styles.titleWrapper}><Text style={styles.title}>Front Nine</Text></View>
+        {holes && holes.map((hole, index) => (
+         <TouchableOpacity key={index} onPress={onPressHandler}>
+           <HoleDetail visible={holeDetail} onClose={onCloseHandler}/>
+            <Card styles={styles.holeWrapper}>
               <Text style={styles.text}>Hole:</Text>
               <Text style={styles.text}>{hole.number}</Text>
               <Text style={styles.text}>Par:</Text>
@@ -46,21 +57,21 @@ const FrontNine = (props) => {
               <Text style={styles.text}>Score:</Text>
               <TextInput
                 style={styles.input}
-                value={hole.score}
-                onChangeText={onChangeInputHandler}
                 placeholder="0"
                 keyboardType="number-pad"
                 maxLength={1}
+                onChangeText={(newValue) => updateScore(newValue, index)}
+                defaultValue={hole.score.toString()}
               />
             </Card>
           </TouchableOpacity>
         ))}
         <Card style={styles.totalWrapper}>
-          <Text style={styles.text}>{scores.reduce(scoreTally)}</Text>
+          <Text style={styles.text}>{Object.values(holes).reduce(scoreTally, 0)}</Text>
           <TouchableOpacity style={styles.button} onPress={onClickHandler}>
             <Text style={styles.buttonText}>View Scorecard</Text>
           </TouchableOpacity>
-          <FrontNineModal newScores={scores} visible={scorecardView} onExit={onExitHandler} />
+          <FrontNineModal visible={scorecardView} onExit={onExitHandler} />
         </Card>
       </View>
     </View>
@@ -69,7 +80,20 @@ const FrontNine = (props) => {
 
 const styles = StyleSheet.create({
   screen: {
+    flex: 1 
+  },
+  titleWrapper: {
     flex: 1,
+    padding: 1, 
+    backgroundColor: 'white',
+    alignItems: 'center',
+    borderBottomColor: '#A9A9A9',
+    borderBottomWidth: 1
+  },
+  title: {
+    fontSize: 25,
+    fontWeight: 'bold',
+    color: '#51130d'
   },
   scrollWrapper: {
     flexDirection: "row",
