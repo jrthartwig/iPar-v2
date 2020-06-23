@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, ScrollView } from 'react-native';
-import Header from './components/Header';
+import Header from './components/Header/Header';
 import { NavigationContainer } from '@react-navigation/native';
 import Tabs from './components/Tabs';
 

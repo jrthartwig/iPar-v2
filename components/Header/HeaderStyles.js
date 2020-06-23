@@ -1,14 +1,4 @@
-import React from 'react';
-import { View, Text, StyleSheet } from 'react-native'; 
-
-const Header = props => {
-    return (
-        <View style={styles.header}>
-            <Text style={styles.headerTitle}>{props.title}</Text>
-        </View>
-    );
-
-};
+import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
     header: {
@@ -25,8 +15,6 @@ const styles = StyleSheet.create({
         fontFamily: 'Verdana',
         fontWeight: 'bold'
     }
+});
 
-
-})
-
-export default Header;
+export default styles; 

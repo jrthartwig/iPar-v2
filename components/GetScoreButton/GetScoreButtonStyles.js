@@ -1,15 +1,4 @@
-import React from 'react';
-import {View, Button, StyleSheet} from 'react-native'; 
-
-const GetScoreButton = props => {
-    return (
-        <View style={styles.screen}>
-            <View style={styles.button}><Button color="white" title="Get Score" /></View>
-        </View>
-    )
-
-
-}
+import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
     screen: {
@@ -30,6 +19,6 @@ const styles = StyleSheet.create({
         margin: 10,
         borderColor: 'black', 
         borderWidth: 1
-}})
+}});
 
-export default GetScoreButton 
+export default styles;

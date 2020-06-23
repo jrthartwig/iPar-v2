@@ -1,5 +1,6 @@
 import React from "react";
 import { View, Text, StyleSheet, Button, Modal } from "react-native";
+import styles from './HoleDetailStyles';
 
 const HoleDetail = (props) => {
   return (
@@ -16,17 +17,6 @@ const HoleDetail = (props) => {
   );
 };
 
-const styles = StyleSheet.create({
-  screen: {
-        justifyContent: "center",
-        alignItems: "center",
-        flexDirection: "row",
-        position: "absolute",
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 40
-      }
-});
+
 
 export default HoleDetail;
