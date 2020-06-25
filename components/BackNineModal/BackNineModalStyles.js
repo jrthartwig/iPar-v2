@@ -1,42 +1,19 @@
 import { StyleSheet } from "react-native";
-import titleTextColors from './titleTextColors';
 
-function createTitleText(backgroundColor) {
-  return {
-    padding: 6.5,
-    fontSize: 14,
-    fontWeight: "bold",
-    backgroundColor,
-    color: "white",
-  };
-}
+const cellStyle = {
+  padding: 6.5,
+  fontSize: 14,
+  color: "white",
+  fontWeight: "bold",
+};
 
-const titleTextStyles = {};
-titleTextColors.forEach((titleTextColor) => {
-  titleTextStyles[`${titleTextColor.title}TitleText`] = createTitleText(
-    titleTextColor.color
-  );
-});
+const yardageCellStyle = {
+  justifyContent: "space-between",
+  ...cellStyle,
+  fontWeight: "normal",
+};
 
-
-function createYardageTitleText(backgroundColor) {
-  return {
-    justifyContent: "space-between",
-    padding: 6.5,
-    fontSize: 14,
-    backgroundColor,
-    color: "white"
-  }
-}
-
-const yardageTitleTextStyles = {};
-titleTextColors.forEach((titleTextColor) => {
-  yardageTitleTextStyles[`${titleTextColor.title}Yardage`] = createYardageTitleText(
-    titleTextColor.color
-  );
-});
-
-let backNineModalStyles = {
+const styles = StyleSheet.create({
   modal: {
     justifyContent: "center",
     alignItems: "center",
@@ -47,31 +24,26 @@ let backNineModalStyles = {
     right: 0,
     bottom: 40,
   },
-  title: {
-    flexDirection: "column",
-  },
-  titleText: {
-    padding: 6.5,
-    fontSize: 14,
-    fontWeight: "bold",
-  },
-  holeTitleText: {
-    padding: 6.5,
-    fontSize: 14,
-    fontWeight: "bold",
-    backgroundColor: "#ddd",
-  },
-  holeNumbers: {
-    justifyContent: "space-between",
-    padding: 6.5,
-    fontSize: 14,
-  },
-  topHoleNumbers: {
-    justifyContent: "space-between",
-    padding: 6.5,
-    fontSize: 14,
-    backgroundColor: "#ddd",
-  },
+  title: { flexDirection: "column" },
+
+  titleText: { ...cellStyle, color: "black" },
+
+  holeTitleText: { ...cellStyle, color: "black", backgroundColor: "#ddd" },
+  talonTitleText: { backgroundColor: "black", ...cellStyle },
+  augustaTitleText: { backgroundColor: "#006633", ...cellStyle },
+  whiteTitleText: { backgroundColor: "#666666", ...cellStyle },
+  redtailTitleText: { backgroundColor: "#990033", ...cellStyle },
+  seniorTitleText: { backgroundColor: "#999900", ...cellStyle },
+
+  talonYardage: { backgroundColor: "black", ...yardageCellStyle },
+  augustaYardage: { backgroundColor: "#006633", ...yardageCellStyle },
+  whiteYardage: { backgroundColor: "#666666", ...yardageCellStyle },
+  redtailYardage: { backgroundColor: "#990033", ...yardageCellStyle },
+  seniorYardage: { backgroundColor: "#999900", ...yardageCellStyle },
+
+  holeNumbers: { ...yardageCellStyle, color: "black", fontWeight: "normal" },
+  topHoleNumbers: { ...cellStyle, color: "black", backgroundColor: "#ddd" },
+
   button: {
     position: "absolute",
     top: 0,
@@ -81,10 +53,6 @@ let backNineModalStyles = {
     justifyContent: "center",
     alignItems: "center",
   },
-};
-
-const styles = StyleSheet.create(backNineModalStyles);
-
-backNineModalStyles = { ...backNineModalStyles, ...titleTextStyles, ...yardageTitleTextStyles };
+});
 
 export default styles;

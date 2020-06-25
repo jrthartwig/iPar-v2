@@ -1,124 +1,58 @@
-import {StyleSheet} from 'react-native'; 
+import { StyleSheet } from "react-native";
+
+const cellStyle = {
+  padding: 6.5,
+  fontSize: 14,
+  color: "white",
+  fontWeight: "bold",
+};
+
+const yardageCellStyle = {
+  justifyContent: "space-between",
+  ...cellStyle,
+  fontWeight: "normal",
+};
 
 const styles = StyleSheet.create({
-    container: {
-      borderTopColor: 'black', 
-      borderTopWidth: 1
-    },
-    modal: {
-      justifyContent: "center",
-      alignItems: "center",
-      flexDirection: "row",
-      position: "absolute",
-      top: 0,
-      left: 0,
-      right: 0,
-      bottom: 40
-    },
-    title: {
-      flexDirection: "column"
-    },
-    titleText: {
-      padding: 6.5,
-      fontSize: 14,
-      fontWeight: "bold",
-    },
-    holeTitleText: {
-      padding: 6.5,
-      fontSize: 14,
-      fontWeight: "bold",
-      backgroundColor: "#ddd"
-    },
-    talonTitleText: {
-      padding: 6.5,
-      fontSize: 14,
-      fontWeight: "bold",
-      backgroundColor: "black",
-      color: 'white'
-    },
-    augustaTitleText: {
-      padding: 6.5,
-      fontSize: 14,
-      fontWeight: "bold",
-      backgroundColor: "#006633",
-      color: 'white'
-    },
-    whiteTitleText: {
-      padding: 6.5,
-      fontSize: 14,
-      fontWeight: "bold",
-      backgroundColor: "#666666",
-      color: 'white'
-    },
-    redtailTitleText: {
-      padding: 6.5,
-      fontSize: 14,
-      fontWeight: "bold",
-      backgroundColor: "#990033",
-      color: 'white'
-    }, 
-    seniorTitleText: {
-      padding: 6.5,
-      fontSize: 14,
-      fontWeight: "bold",
-      backgroundColor: "#999900",
-      color: 'white'
-    },
-    holeNumbers: {
-      justifyContent: "space-between",
-      padding: 6.5,
-      fontSize: 14,
-    },
-    topHoleNumbers: {
-      justifyContent: "space-between",
-      padding: 6.5,
-      fontSize: 14,
-      backgroundColor: "#ddd"
-    },
-    talonYardage: {
-      justifyContent: "space-between",
-      padding: 6.5,
-      fontSize: 14,
-      backgroundColor: 'black',
-      color: 'white' 
-    },
-    augustaYardage: {
-      justifyContent: "space-between",
-      padding: 6.5,
-      fontSize: 14,
-      backgroundColor: '#006633',
-      color: 'white' 
-    },
-    whiteYardage: {
-      justifyContent: "space-between",
-      padding: 6.5,
-      fontSize: 14,
-      backgroundColor: '#666666',
-      color: 'white' 
-    },
-    redtailYardage: {
-      justifyContent: "space-between",
-      padding: 6.5,
-      fontSize: 14,
-      backgroundColor: '#990033',
-      color: 'white' 
-    }, 
-    seniorYardage: {
-      justifyContent: "space-between",
-      padding: 6.5,
-      fontSize: 14,
-      backgroundColor: '#999900',
-      color: 'white'
-    },
-    button: {
-      position: "absolute",
-      top: 0,
-      left: 0,
-      right: 0,
-      bottom: -300,
-      justifyContent: "center",
-      alignItems: "center"
-    }
-  });
+  modal: {
+    justifyContent: "center",
+    alignItems: "center",
+    flexDirection: "row",
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 40,
+  },
+  title: { flexDirection: "column" },
 
-  export default styles;
+  titleText: { ...cellStyle, color: "black" },
+
+  holeTitleText: { ...cellStyle, color: "black", backgroundColor: "#ddd" },
+  talonTitleText: { backgroundColor: "black", ...cellStyle },
+  augustaTitleText: { backgroundColor: "#006633", ...cellStyle },
+  whiteTitleText: { backgroundColor: "#666666", ...cellStyle },
+  redtailTitleText: { backgroundColor: "#990033", ...cellStyle },
+  seniorTitleText: { backgroundColor: "#999900", ...cellStyle },
+
+  talonYardage: { backgroundColor: "black", ...yardageCellStyle },
+  augustaYardage: { backgroundColor: "#006633", ...yardageCellStyle },
+  whiteYardage: { backgroundColor: "#666666", ...yardageCellStyle },
+  redtailYardage: { backgroundColor: "#990033", ...yardageCellStyle },
+  seniorYardage: { backgroundColor: "#999900", ...yardageCellStyle },
+
+  holeNumbers: { ...yardageCellStyle, color: "black", fontWeight: "normal" },
+  topHoleNumbers: { ...cellStyle, color: "black", backgroundColor: "#ddd" },
+
+  button: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: -300,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+});
+
+export default styles;

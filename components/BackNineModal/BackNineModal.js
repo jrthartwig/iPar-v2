@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, Modal, Button } from "react-native";
+import { View, Text, Modal, StyleSheet, Button } from "react-native";
 import backNineData from "../../backNineData";
 import styles from './BackNineModalStyles'; 
 

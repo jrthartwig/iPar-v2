@@ -40,6 +40,12 @@ const FrontNine = (props) => {
   const [holes, setHoles] = useState(frontNineData);
   const [holeDetail, setHoleDetail] = useState(false);
 
+  
+  {/* const calculatedScore = Object.values(holes).reduce(scoreTally, 0) */}
+  
+
+  const calculateScore = (holes, scoreTally) => Object.values(holes).reduce(scoreTally, 0)
+  
 
   const onClickHandler = () => {
     setScorecardView(true);
@@ -94,8 +100,10 @@ const FrontNine = (props) => {
             </Card>
           </TouchableOpacity>
         ))}
+
+        
         <Card style={styles.totalWrapper}>
-          <Text style={styles.text}>{Object.values(holes).reduce(scoreTally, 0)}</Text>
+          <Text style={styles.text}>{calculateScore(holes, scoreTally)}</Text>
           <TouchableOpacity style={styles.button} onPress={onClickHandler}>
             <Text style={styles.buttonText}>View Scorecard</Text>
           </TouchableOpacity>
