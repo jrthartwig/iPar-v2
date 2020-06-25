@@ -5,7 +5,7 @@ import TestRenderer from 'react-test-renderer';
 
 describe("the hole detail screen", () => {
     it("exists", () => {
-        const testRenderer = TestRenderer.create(<HoleDetail />)
+        TestRenderer.create(<HoleDetail />)
         expect(HoleDetail).toBeDefined();
     })
-})
+});
