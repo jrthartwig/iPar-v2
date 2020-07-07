@@ -29,11 +29,11 @@ const styles = StyleSheet.create({
   titleText: { ...cellStyle, color: "black" },
 
   holeTitleText: { ...cellStyle, color: "black", backgroundColor: "#ddd" },
-  talonTitleText: { backgroundColor: "black", ...cellStyle },
-  augustaTitleText: { backgroundColor: "#006633", ...cellStyle },
-  whiteTitleText: { backgroundColor: "#666666", ...cellStyle },
-  redtailTitleText: { backgroundColor: "#990033", ...cellStyle },
-  seniorTitleText: { backgroundColor: "#999900", ...cellStyle },
+  talonTitleText: { ...cellStyle, backgroundColor: "black" },
+  augustaTitleText: { ...cellStyle, backgroundColor: "#006633" },
+  whiteTitleText: { ...cellStyle, backgroundColor: "#666666"  },
+  redtailTitleText: { ...cellStyle, backgroundColor: "#990033" },
+  seniorTitleText: {  ...cellStyle, backgroundColor: "#999900" },
 
   talonYardage: { backgroundColor: "black", ...yardageCellStyle },
   augustaYardage: { backgroundColor: "#006633", ...yardageCellStyle },
