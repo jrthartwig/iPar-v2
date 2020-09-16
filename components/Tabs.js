@@ -1,5 +1,5 @@
 import React from "react";
-import {View, Text, StyleSheet} from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import frontNine from "../screens/FrontNine/FrontNine";
 import Home from "../screens/Home/Home";
@@ -30,13 +30,13 @@ const newTabs = () => {
   return (
     <View style={styles.container}>
       <View style={styles.content}>
-          <Route path="/home" component={Home} />
-          <Route path="/frontnine" component={frontNine} />
-          <Route path="/backnine" component={backNine} />
+        <Route path="/home" component={Home} />
+        <Route path="/frontnine" component={frontNine} />
+        <Route path="/backnine" component={backNine} />
       </View>
       <View style={styles.tabs}>
         <Link to="/home" style={styles.link} underlayColor={"rgb(245, 245, 245)"}>
-            <Text style={styles.text}>Home</Text></Link>
+          <Text style={styles.text}>Home</Text></Link>
         <Link to="/frontnine" style={styles.link} underlayColor={"rgb(245, 245, 245)"}><Text style={styles.text}>Front 9</Text></Link>
         <Link to="/backnine" style={styles.link} underlayColor={"rgb(245, 245, 245)"}><Text style={styles.text}>Back 9</Text></Link>
       </View>
@@ -45,32 +45,32 @@ const newTabs = () => {
 };
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1
-    },
-    content: {
-        flex: 1
-    },
-    tabs: {
-        flex: 0,
-        flexDirection: "row",
-        justifyContent: "center",
-        alignItems: "center",
-    },
-    link: {
-        flex: 1,
-        flexBasis: 0,
-        justifyContent: "center",
-        alignItems: "center",
-        padding: 30,
-        backgroundColor: "transparent"
-    },
-    text: {
-        color: "#51130d",
-        fontSize: 16,
-        fontFamily: "Verdana",
-    }
+  container: {
+    flex: 1
+  },
+  content: {
+    flex: 1
+  },
+  tabs: {
+    flex: 0,
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  link: {
+    flex: 1,
+    flexBasis: 0,
+    justifyContent: "center",
+    alignItems: "center",
+    padding: 30,
+    backgroundColor: "transparent"
+  },
+  text: {
+    color: "#51130d",
+    fontSize: 16,
+    fontFamily: "Verdana",
+  }
 })
 
 
-export default newTabs;
+export default Tabs;

@@ -9,12 +9,12 @@ import frontNineData from "../../frontNineData";
 import Card from "../../components/Card/Card";
 import FrontNineModal from "../../components/FrontNineModal/FrontNineModal";
 import HoleDetail from "../HoleDetail/HoleDetail"
-import {AsyncStorage} from "react-native"; 
+import { AsyncStorage } from "react-native";
 import styles from './FrontNineStyles';
 
 const _storeHoles = async (holes) => {
   // try {
-    await AsyncStorage.setItem('@FrontNine:Holes', JSON.stringify(holes), e => console.log(e));
+  await AsyncStorage.setItem('@FrontNine:Holes', JSON.stringify(holes), e => console.log(e));
   //} catch (error) {
   //}
 };
@@ -25,7 +25,7 @@ const _retrieveHoles = async () => {
     if (value !== null) {
       // We have data!!
       console.log(value);
-      return value; 
+      return value;
     }
     else {
       console.log('somethings broken')
@@ -38,14 +38,14 @@ const _retrieveHoles = async () => {
 const FrontNine = (props) => {
   const [scorecardView, setScorecardView] = useState(false);
   const [holes, setHoles] = useState(frontNineData);
-  const [holeDetail, setHoleDetail] = useState(false);
+  const [selectedHole, setSelectedHole] = useState(null);
 
-  
-  {/* const calculatedScore = Object.values(holes).reduce(scoreTally, 0) */}
-  
+
+  {/* const calculatedScore = Object.values(holes).reduce(scoreTally, 0) */ }
+
 
   const calculateScore = (holes, scoreTally) => Object.values(holes).reduce(scoreTally, 0)
-  
+
 
   const onClickHandler = () => {
     setScorecardView(true);
@@ -55,22 +55,14 @@ const FrontNine = (props) => {
     setScorecardView(false);
   };
 
-  const onCloseHandler = () => {
-    setHoleDetail(false);
-  }
-
-  const onPressHandler = () => {
-    setHoleDetail(true);
-  };
-
-  const scoreTally = (t, {score}) => t + score;
+  const scoreTally = (t, { score }) => t + score;
 
   const updateScore = (score, index) => {
     let updateHoles = [...holes]
     updateHoles[index].score = score === '' ? 0 : parseInt(score);
     setHoles(updateHoles)
     let updatedScores = holes.map(h => h.score)
-    _storeHoles(updatedScores) 
+    _storeHoles(updatedScores)
     _retrieveHoles();
   }
 
@@ -79,10 +71,10 @@ const FrontNine = (props) => {
   return (
     <View style={styles.screen}>
       <View style={styles.scrollWrapper}>
-      <View style={styles.titleWrapper}><Text style={styles.title}>Front Nine</Text></View>
+        <View style={styles.titleWrapper}><Text style={styles.title}>Front Nine</Text></View>
+        <HoleDetail hole={selectedHole} onClose={() => setSelectedHole(null)} />
         {holes && holes.map((hole, index) => (
-         <TouchableOpacity key={index} onPress={onPressHandler}>
-           <HoleDetail visible={holeDetail} onClose={onCloseHandler}/>
+          <TouchableOpacity key={index} onPress={() => setSelectedHole(hole)}>
             <Card styles={styles.holeWrapper}>
               <Text style={styles.text}>Hole:</Text>
               <Text style={styles.text}>{hole.number}</Text>
@@ -101,7 +93,7 @@ const FrontNine = (props) => {
           </TouchableOpacity>
         ))}
 
-        
+
         <Card style={styles.totalWrapper}>
           <Text style={styles.text}>{calculateScore(holes, scoreTally)}</Text>
           <TouchableOpacity style={styles.button} onPress={onClickHandler}>

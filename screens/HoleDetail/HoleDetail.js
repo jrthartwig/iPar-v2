@@ -5,20 +5,23 @@ import styles from './HoleDetailStyles';
 const HoleDetail = (props) => {
 
   const handleOnPress = () => {
-    const {onClose} = props; 
+    const { onClose } = props;
     onClose && onClose();
   }
 
   return (
-    <Modal visible={props.visible}>
-      <View style={styles.screen}>
-        <View>
-          <Text>This is a hole</Text>
+    <Modal visible={!!props.hole}>
+      {props.hole &&
+        <View style={styles.screen}>
+          <View>
+            <Text>This is a hole</Text>
+          </View>
+          <View><Text>{props.hole.number}</Text></View>
+          <View>
+            <Button title="close" onPress={handleOnPress} />
+          </View>
         </View>
-        <View>
-          <Button title="close" onPress={handleOnPress} />
-        </View>
-      </View>
+      }
     </Modal>
   );
 };
